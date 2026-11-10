@@ -1,0 +1,12 @@
+version: '3'
+
+tasks:
+  build:
+    desc: Собрать приложение в bin/
+    cmds:
+      - go build -o bin/app{{exeExt}} ./cmd/app
+
+  run:
+    desc: Решить задачу распределения по данным из tasks.csv
+    cmds:
+      - go run ./cmd/app {{.CLI_ARGS}}
